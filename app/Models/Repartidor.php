@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Repartidor extends Model
 {
     use HasFactory;
+
+    public function camions()
+    {
+        return $this->hasMany(Camion::class);
+    }
 }

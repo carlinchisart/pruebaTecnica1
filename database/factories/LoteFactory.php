@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Finca;
 use App\Models\Lote;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +23,9 @@ class LoteFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'fecha_recoleccion' => $this->faker->date(),
+            'num_mangos' => rand(500,5000),
+            'finca_id' => Finca::inRandomOrder()->first()->id
         ];
     }
 }

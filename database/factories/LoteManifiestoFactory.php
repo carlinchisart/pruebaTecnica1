@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Lote_manifiesto;
+use App\Models\Lote;
+use App\Models\LoteManifiesto;
+use App\Models\Manifiesto;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LoteManifiestoFactory extends Factory
@@ -12,7 +14,7 @@ class LoteManifiestoFactory extends Factory
      *
      * @var string
      */
-    protected $model = Lote_manifiesto::class;
+    protected $model = LoteManifiesto::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +24,9 @@ class LoteManifiestoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'manifiesto_id' => Manifiesto::inRandomOrder()->first()->id,
+            'lote_id' => Lote::inRandomOrder()->first()->id,
+            'estado' => $this->faker->randomElement(array('ENTREGADO','DEVUELTO'))
         ];
     }
 }

@@ -16,9 +16,9 @@ class CreateManifiestosTable extends Migration
         Schema::create('manifiestos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->date('fecha_nomina');
+            $table->date('fecha_nomina')->nullable();
             $table->bigInteger('camion_id');
-            $table->integer('cantidad_lotes');
+            $table->integer('cantidad_lotes')->nullable();
         });
     }
 

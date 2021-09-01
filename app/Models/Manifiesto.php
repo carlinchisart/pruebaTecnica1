@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Manifiesto extends Model
 {
     use HasFactory;
+
+    public function camion()
+    {
+        return $this->belongsTo(Camion::class);
+    }
+
+    public function lotes()
+    {
+        return $this->belongsToMany(Lote::class)->withPivot('estado');
+    }
 }

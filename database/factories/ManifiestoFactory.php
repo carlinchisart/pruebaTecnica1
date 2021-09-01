@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Camion;
 use App\Models\Manifiesto;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +23,7 @@ class ManifiestoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'camion_id' => Camion::inRandomOrder()->first()->id,
         ];
     }
 }

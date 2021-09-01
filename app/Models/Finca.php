@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Finca extends Model
 {
     use HasFactory;
+
+    public function lotes()
+    {
+        return $this->hasMany(Lote::class);
+    }
 }

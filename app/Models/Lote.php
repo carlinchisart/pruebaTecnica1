@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Lote extends Model
 {
     use HasFactory;
+
+    public function finca()
+    {
+        return $this->belongsTo(Finca::class);
+    }
 }
