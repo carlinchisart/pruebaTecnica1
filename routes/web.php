@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Nomina;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('nomina',[Nomina::class,'index'])->name('nomina');
+Route::get('manifiestos/{camion_id}',[Nomina::class,'manifiestos'])->name('manifiestos');
