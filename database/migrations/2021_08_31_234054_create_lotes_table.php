@@ -18,7 +18,7 @@ class CreateLotesTable extends Migration
             $table->timestamps();
             $table->date('fecha_recoleccion');
             $table->integer('num_mangos');
-            $table->foreign('finca_id');
+            $table->bigInteger('finca_id');
 
         });
     }

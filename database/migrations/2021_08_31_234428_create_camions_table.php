@@ -16,8 +16,8 @@ class CreateCamionsTable extends Migration
         Schema::create('camions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreign('finca_id');
-            $table->foreign('repartidor_id');
+            $table->bigInteger('finca_id');
+            $table->bigInteger('repartidor_id');
         });
     }
 

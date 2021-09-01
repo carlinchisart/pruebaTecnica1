@@ -17,7 +17,7 @@ class CreateManifiestosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->date('fecha_nomina');
-            $table->foreign('camion_id');
+            $table->bigInteger('camion_id');
             $table->integer('cantidad_lotes');
         });
     }

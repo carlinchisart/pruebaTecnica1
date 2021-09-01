@@ -16,8 +16,8 @@ class CreateLoteManifiestosTable extends Migration
         Schema::create('lote_manifiestos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreign('manifiesto_id');
-            $table->foreign('lote_id');
+            $table->bigInteger('manifiesto_id');
+            $table->bigInteger('lote_id');
             $table->string('estado');
         });
     }
