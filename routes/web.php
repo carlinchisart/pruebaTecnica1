@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('nomina',[Nomina::class,'index'])->name('nomina');
 Route::get('manifiestos/{camion_id}',[Nomina::class,'manifiestos'])->name('manifiestos');
+Route::get('finca/{finca}',[Nomina::class,'repartidoresFinca'])->name('repartidores');
